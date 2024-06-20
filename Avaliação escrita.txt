@@ -1,0 +1,44 @@
+Avaliação escrita:
+
+Para que serve o MVVM?
+MVVM (Model-View-ViewModel) é um padrão de arquitetura de software que separa a interface do usuário (View) da lógica de negócios (ViewModel) e dos dados (Model). Ele facilita a manutenção, testabilidade e escalabilidade de aplicativos.
+
+O que é o MVVM Community Toolkit?
+   O MVVM Community Toolkit é um conjunto de ferramentas e utilitários desenvolvidos pela comunidade para facilitar o desenvolvimento de aplicativos usando o padrão MVVM. Ele fornece implementações comuns de funcionalidades necessárias para aplicativos MVVM, como comandos, validação, mensagens entre ViewModel e View, entre outros.
+
+Para quê serve o arquivo appShell? Como adicionar uma view para ser exibida no lugar da main page?
+   O arquivo `AppShell` é geralmente usado para definir a estrutura básica da interface do usuário, incluindo a navegação entre páginas. Para adicionar uma nova view para ser exibida no lugar da `MainPage` (normalmente a página inicial), você pode definir uma nova página (herdando de `ContentPage`) e então atribuí-la à `MainPage` do `AppShell`.
+
+Para que serve `<TabBar>` no appshell?
+   `<TabBar>` é um elemento de interface no Xamarin.Forms que é usado dentro do `AppShell` para definir uma barra de abas na parte inferior ou superior da tela. Ele permite que o usuário navegue entre diferentes seções do aplicativo de forma rápida e intuitiva.
+
+Em aula, como instalamos pacotes usando Nuget no C#?
+   Para instalar pacotes usando o NuGet em C#, geralmente usamos o NuGet Package Manager no Visual Studio. Você pode abrir o gerenciador de pacotes, procurar pelo pacote desejado (por exemplo, MVVM Community Toolkit), selecioná-lo e instalá-lo no projeto.
+
+O que é o Binding? Em que arquivo criamos os bindings?
+   Binding é o processo de ligação de propriedades de elementos da interface do usuário (View) a propriedades de um ViewModel, permitindo que os dados sejam sincronizados automaticamente. Os bindings são definidos no arquivo de layout onde os elementos da interface do usuário são declarados.
+
+O que é um Command?
+   Command é um padrão de design usado para encapsular a lógica de ação (como um método ou uma ação a ser executada) em um objeto que pode ser acionado por eventos, como um clique de botão na interface do usuário. Em MVVM, os Commands são frequentemente usados para responder a interações do usuário sem que a View tenha que conhecer diretamente a lógica de negócios associada.
+
+O que é o Binding context? Escreva como associamos o binding context a classe ViewModel.
+   Binding Context é a propriedade que define o contexto de dados para um elemento de interface do usuário em Xamarin.Forms. Para associar uma classe ViewModel ao Binding Context de uma página, você pode definir o Binding Context diretamente no csharp da página ou no XAML da seguinte forma:
+
+   <ContentPage.BindingContext>
+       <viewModels:MinhaViewModel />
+   </ContentPage.BindingContext>
+
+
+   Onde `viewModels` é o namespace onde a ViewModel está localizada e `MinhaViewModel` é a classe ViewModel que você deseja associar.
+
+Para que serve a ViewModel?
+   A ViewModel em MVVM serve como uma camada intermediária entre a View (interface do usuário) e o Modelo (dados e lógica de negócios). Ela contém a lógica de apresentação e manipulação de dados necessária para a View. Ela também facilita a separação de preocupações e a testabilidade do código.
+
+Qual a diferença entre construir uma view no MVVM e fora do MVVM?
+    Construir uma View no MVVM implica separar a lógica de apresentação (ViewModel) da estrutura da interface do usuário (View), promovendo uma melhor organização e manutenção do código. Fora do MVVM, a lógica de apresentação pode estar intimamente misturada com a View, dificultando a testabilidade e a manutenção.
+
+O que quer dizer que um atributo é uma propriedade observável? [Observable Property]
+    Uma propriedade observável (Observable Property) é uma propriedade em uma classe que notifica automaticamente a View (ou outras partes do código) quando seu valor é alterado. Isso permite que a interface do usuário seja atualizada automaticamente sempre que os dados subjacentes mudarem, sem que seja necessário código adicional para monitorar essas mudanças.
+
+Quando criamos uma Observable Property, que cuidado devemos ter com os atributos?
+    Ao criar uma Observable Property, é importante garantir que as notificações de alteração (PropertyChanged) sejam emitidas corretamente sempre que o valor da propriedade for atualizado. Isso geralmente é feito utilizando um padrão como INotifyPropertyChanged (no caso do C# e Xamarin.Forms), que permite que a View seja notificada das mudanças e atualize os dados exibidos conforme necessário.
