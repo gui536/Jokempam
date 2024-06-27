@@ -18,7 +18,7 @@
         </HorizontalStackLayout>
 
         <Image
-            Source=""
+            Source="dotnet_bot"
             HeightRequest="50"/>
 
         <Picker Title="Selecione o que você vai jogar">
@@ -36,5 +36,4 @@
         <Label
             Text=""/>
     </VerticalStackLayout>
-
-</ContentPage
+</ContentPage>
